@@ -1,0 +1,32 @@
+<div class="ffx-character-menu"> 
+    <div class="ffx-sidebar">
+        <div ng-repeat="character in characters |  orderBy: 'name' " class="ffx-sidebar-item " ng-click="setActive(character, 0)" ng-class="selectedCharacter.id == character.id? 'ff-sidebar-active': '' " >{{character.name}}</div>
+    </div>
+
+    <div class="ffx-character-details">
+        <div class="ffx-line"></div>
+        <div class="ffx-nametag">{{activeCharacter.name}}</div>
+        <div class="ffx-voice">Overdrive: {{activeCharacter.overdrive}} <span ng-if="showOverdrive"> - {{activeOverdrive.name}}</span></div>
+        <div class="ffx-description"> 
+            <img src="/ffx_impact/images/box-detail-icon.png" />
+            <div class="ffx-desc-item" ng-if="!showOverdrive">
+                <div>{{activeCharacter.description}} </div>  
+                <div>{{activeCharacter.sphereGrid}} </div>  
+            </div>
+
+            <div class="ffx-desc-item" ng-if="showOverdrive">
+                <div>Target: {{activeOverdrive.target}}</div>
+                <div>Requirement: {{activeOverdrive.requirement}} </div>  
+                <div>Description: {{activeOverdrive.description}} </div> 
+                <div>{{activeOverdrive.aditionalDescription}} </div> 
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="ffx-chatacter-model">
+        <div ng-if="!showAeons" ng-style="{'background-image': 'url(/ffx_impact/images/profile/' + activeCharacter.name + '-profile.png)'}" class="character-img" ></div>
+        <div ng-if="showAeons" ng-style="{'background-image': 'url(/ffx_impact/images/overdrive/' + activeOverdrive.image +'.png)'}" class="character-img" style="height: 80% !important;" ></div>
+    </div>
+
+</div>

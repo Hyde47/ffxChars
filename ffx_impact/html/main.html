@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+        <script src="/ffx_impact/controller/ctrl.main.js"></script>
+        <script src="/ffx_impact/controller/fact.main.js"></script>
+        <link rel="icon" type="image/x-icon" href="/ffx_impact/images/logo.png">
+        <title>Character archive</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="/ffx_impact/style/main.css">
+    </head>
+    <body ng-class="activeCharacter.name + '-theme' " ng-controller="mainController" ng-app="mainCtrl">
+        <div ng-style="{'background-image': 'url(/ffx_impact/images/background/' + activeCharacter.name + '-bg.png)'}" class="ffx-bg-img"></div>
+        <div class="ffx-bg-cover"></div>
+
+        <div class="ffx-header" ng-include="'sticky-header.html'"></div>
+        <div class="ffx-body" ng-include="'body.html'"></div>
+        <div class="ffx-footer" ng-include="'footer.html'"></div>
+
+        
+    </body>
+</html>

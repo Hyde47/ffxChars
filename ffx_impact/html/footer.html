@@ -1,0 +1,8 @@
+<div class="ffx-overdrive-list">
+    <div ng-if="activeCharacter.overdriveItems.length > 5" class="ffx-arrow" ng-click="shiftList(1)"><img src="/ffx_impact/images/arrow-left.png"/></div>
+    <div ng-repeat="item in overdriveList | orderBy: 'id' " class="ffx-overdrive-item ffx-overdrive-img" ng-style="{'background-image': 'url( /ffx_impact/images/overdrive/' + item.image +'.png)'}" ng-class="selectedOverdrive == item.name? 'ffx-overdrive-active':'' " ng-click="setActive(item, 1)">
+        <div class="ffx-overdrive-title">{{item.name}}</div>
+    </div>
+    <div ng-if="activeCharacter.overdriveItems.length > 5" class="ffx-arrow"  ng-click="shiftList(0)"><img src="/ffx_impact/images/arrow-right.png"/></div>
+
+</div>
